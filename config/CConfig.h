@@ -8,11 +8,12 @@
 #include <map>
 using namespace std;
 class CConfig {
+
 public:
     explicit CConfig(string filename);
     string getAttr(string s);
 private:
-    map<string,string> configFile;
+    map<string,string> configData;
     void processAttributes(string s);
 };
 

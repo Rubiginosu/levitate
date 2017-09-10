@@ -24,6 +24,7 @@ CConfig::CConfig(string filename) {
             }
             this->processAttributes(s);
         }
+        config.close();
     } else {
         out("could not open config file.");
     }
@@ -37,14 +38,14 @@ void CConfig::processAttributes(string s) {
         return;
     string attrName = s.substr(0, pos);
     string attrValue = s.substr(pos + 1);
-    this->configFile[attrName] = attrValue;
+    this->configData[attrName] = attrValue;
 }
 
 string CConfig::getAttr(string s) {
     map<string, string>::iterator it;
-    it = this->configFile.find(s);
-    if (it == this->configFile.end()) {
+    it = this->configData.find(s);
+    if (it == this->configData.end()) {
         return "";
     }
-    return this->configFile[s];
+    return this->configData[s];
 }
