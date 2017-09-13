@@ -19,9 +19,9 @@ CSocket::CSocket(CConfig* c) {
     if(port_s.empty())
         out("Port information not found.using 19132.");
     else{
-        port = (uint16_t)atoi(port_s.c_str());
+        istringstream iss(port_s);
+        iss >> port;
     }
-
     s.sin_family = AF_INET;
     s.sin_port = htons(port);
     s.sin_addr.s_addr = htonl(INADDR_ANY);

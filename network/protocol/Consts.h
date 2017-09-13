@@ -46,4 +46,5 @@ enum Minecraft{
     MC_CLINET_HANDSHAKE = 0x13,
     MC_DISCONNECTED_NOTIFICATION = 0x15,
 };
+
 #endif //LEVITATE_CONSTS_H
