@@ -5,7 +5,6 @@
 #include <fstream>
 #include <iostream>
 #include "CConfig.h"
-#include "../utils/format_output.h"
 
 CConfig::CConfig(string filename) {
     ifstream config(filename);
@@ -26,7 +25,7 @@ CConfig::CConfig(string filename) {
         }
         config.close();
     } else {
-        out("could not open config file.");
+
     }
 }
 

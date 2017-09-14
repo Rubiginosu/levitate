@@ -4,7 +4,7 @@
 
 #include "CVector3.h"
 
-CVector3::CVector3(double x = 0, double y = 0, double z = 0) {
+CVector3::CVector3(double x, double y, double z) {
     this->x = x;
     this->y = y;
     this->z = z;
@@ -34,7 +34,7 @@ double CVector3::getFloorZ() const {
     return (int) z;
 }
 
-void CVector3::add(double x = 0, double y = 0, double z = 0) {
+void CVector3::add(double x, double y, double z) {
     this->x += x;
     this->y += y;
     this->z += z;
