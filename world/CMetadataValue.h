@@ -12,6 +12,8 @@ class CMetadataValue {
 public:
     explicit CMetadataValue(IPlugin *owningPlugin);
 
+    IPlugin *getOwningPlugin();
+
 protected:
     IPlugin *owningPlugin;
 

@@ -8,3 +8,7 @@ CMetadataValue::CMetadataValue(IPlugin* owningPlugin) {
     this->owningPlugin = owningPlugin;
 }
 
+IPlugin* CMetadataValue::getOwningPlugin() {
+    return this->owningPlugin;
+}
+
