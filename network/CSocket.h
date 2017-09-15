@@ -11,7 +11,7 @@
 class CSocket:public ISocket{
 public:
     explicit CSocket(CConfig* c);
-    CPackage recv() override = 0;
+    CPacket recv() override = 0;
     void close() override = 0;
 #ifdef LINUX
 private:

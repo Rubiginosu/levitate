@@ -6,11 +6,11 @@
 #define LEVITATE_ISOCKET_H
 
 
-#include "CPackage.h"
+#include "CPacket.h"
 
 class ISocket {
-    virtual void send(CPackage pkg) = 0;
-    virtual CPackage recv() = 0;
+    virtual void send(CPacket pkg) = 0;
+    virtual CPacket recv() = 0;
     virtual void close() = 0;
 };
 
