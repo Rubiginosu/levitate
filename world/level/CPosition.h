@@ -7,8 +7,21 @@
 
 
 #include "../CVector3.h"
+#include "CLevel.h"
 
 class CPosition : public CVector3 {
+public:
+    CLevel *level;
+
+    CPosition();
+
+    CPosition(int x);
+
+    CPosition(int x, int y);
+
+    CPosition(int x, int y, int z);
+
+    CPosition(int x,int y,int z,CLevel* level);
 
 };
 

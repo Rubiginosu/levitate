@@ -10,7 +10,7 @@
 #include "../exception/CIllegalArgumentException.h"
 class CLevelMetadataStore : public CMetadataStore{
 public:
-    string disambiguate(IMetadata *subject, string& key) throw(CIllegalArgumentException) override;
+    string disambiguate(IMetadata *subject, string& key)override;
 };
 
 

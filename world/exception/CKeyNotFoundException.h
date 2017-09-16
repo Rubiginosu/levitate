@@ -11,6 +11,6 @@
 class CKeyNotFoundException : public IException{
 public:
     string message() override;
-}
+};
 
 #endif //LEVITATE_CKEYNOTFOUNDEXCEPTION_H

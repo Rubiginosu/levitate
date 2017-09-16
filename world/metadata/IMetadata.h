@@ -11,7 +11,7 @@
 using namespace std;
 
 class IMetadata {
-    virtual void set(string key, CMetadataValue v) = 0;
+    virtual void set(string key, CMetadataValue& v) = 0;
 
     virtual CMetadataValue *get(string key) = 0;
 

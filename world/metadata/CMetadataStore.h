@@ -22,7 +22,7 @@ public:
      * @param value
      * @throw CNullPointerException
      */
-    void set(IMetadata *subject, string &key, CMetadataValue value) throw(CNullPointerException);
+    void set(IMetadata *subject, string &key, CMetadataValue* value);
 
     /**
      *
@@ -31,17 +31,18 @@ public:
      * @return map
      * @throw CKeyNotFoundException
      */
-    map<IPlugin *, CMetadataValue> get(IMetadata *subject, string &key) throw(CKeyNotFoundException);
+    map<IPlugin *, CMetadataValue*> get(IMetadata *subject, string &key);
 
     bool has(IMetadata *subject, string &key, IPlugin *owningPlugin);
 
-    void remove(IMetadata* subject,string& key,IPlugin* owningPlugin) throw(CNullPointerException);
+    void remove(IMetadata *subject, string &key, IPlugin *owningPlugin);
 
-    void invalidateAll(IPlugin* owningPlugin) throw(CNullPointerException);
-    virtual string disambiguate(IMetadata *subject, string& key) = 0;
+    void invalidateAll(IPlugin *owningPlugin);
+
+    virtual string disambiguate(IMetadata *subject, string &key) = 0;
 
 private:
-    map<string, map<IPlugin *, CMetadataValue>> metadataMap;
+    map<string, map<IPlugin *, CMetadataValue *>> metadataMap;
 };
 
 
