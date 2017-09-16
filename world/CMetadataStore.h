@@ -37,6 +37,7 @@ public:
 
     void remove(IMetadata* subject,string& key,IPlugin* owningPlugin) throw(CNullPointerException);
 
+    void invalidateAll(IPlugin* owningPlugin);
     virtual string disambiguate(IMetadata *subject, string key) = 0;
 
 private:

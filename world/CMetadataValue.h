@@ -12,6 +12,10 @@ class CMetadataValue {
 public:
     explicit CMetadataValue(IPlugin *owningPlugin);
 
+    virtual void* value() = 0;
+
+    virtual void invalidate() = 0;
+
     IPlugin *getOwningPlugin();
 
 protected:

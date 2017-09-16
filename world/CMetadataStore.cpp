@@ -43,3 +43,16 @@ void CMetadataStore::remove(IMetadata *subject, string& key, IPlugin *owningPlug
         this->metadataMap.erase(entry);
     }
 }
+
+void CMetadataStore::invalidateAll(IPlugin *owningPlugin) {
+    if(owningPlugin == nullptr){
+        throw CNullPointerException();
+    }
+    for (auto &it : this->metadataMap) {
+        for (auto &it2 : it.second) {
+            if(it2.first == owningPlugin){
+                (it2).second.invalidate();
+            }
+        }
+    }
+}
