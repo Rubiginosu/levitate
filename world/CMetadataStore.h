@@ -7,11 +7,14 @@
 
 #include <string>
 #include "IMetadata.h"
+#include "exception/CKeyNotFoundException.h"
+#include "exception/CNullPointerException.h"
 
 using namespace std;
 
 class CMetadataStore {
 public:
+
     /**
      *
      * @param subject
@@ -19,12 +22,25 @@ public:
      * @param value
      * @throw CNullPointerException
      */
-    void set(IMetadata* subject,string& key,CMetadataValue value);
+    void set(IMetadata *subject, string &key, CMetadataValue value) throw(CNullPointerException);
 
-    CMetadataValue* get(IMetadata* subject,string& key);
-    virtual string disambiguate(IMetadata* subject, string key) = 0;
+    /**
+     *
+     * @param subject
+     * @param key
+     * @return map
+     * @throw CKeyNotFoundException
+     */
+    map<IPlugin *, CMetadataValue> get(IMetadata *subject, string &key) throw(CKeyNotFoundException);
+
+    bool has(IMetadata *subject, string &key, IPlugin *owningPlugin);
+
+    void remove(IMetadata* subject,string& key,IPlugin* owningPlugin) throw(CNullPointerException);
+
+    virtual string disambiguate(IMetadata *subject, string key) = 0;
+
 private:
-    map<string,map<IPlugin,CMetadataValue>> metadataMap;
+    map<string, map<IPlugin *, CMetadataValue>> metadataMap;
 };
 
 
