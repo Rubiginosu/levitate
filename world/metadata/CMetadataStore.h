@@ -7,8 +7,8 @@
 
 #include <string>
 #include "IMetadata.h"
-#include "exception/CKeyNotFoundException.h"
-#include "exception/CNullPointerException.h"
+#include "../exception/CKeyNotFoundException.h"
+#include "../exception/CNullPointerException.h"
 
 using namespace std;
 
@@ -37,8 +37,8 @@ public:
 
     void remove(IMetadata* subject,string& key,IPlugin* owningPlugin) throw(CNullPointerException);
 
-    void invalidateAll(IPlugin* owningPlugin);
-    virtual string disambiguate(IMetadata *subject, string key) = 0;
+    void invalidateAll(IPlugin* owningPlugin) throw(CNullPointerException);
+    virtual string disambiguate(IMetadata *subject, string& key) = 0;
 
 private:
     map<string, map<IPlugin *, CMetadataValue>> metadataMap;

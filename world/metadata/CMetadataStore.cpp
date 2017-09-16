@@ -44,7 +44,7 @@ void CMetadataStore::remove(IMetadata *subject, string& key, IPlugin *owningPlug
     }
 }
 
-void CMetadataStore::invalidateAll(IPlugin *owningPlugin) {
+void CMetadataStore::invalidateAll(IPlugin *owningPlugin) throw(CNullPointerException){
     if(owningPlugin == nullptr){
         throw CNullPointerException();
     }

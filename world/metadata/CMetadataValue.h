@@ -6,7 +6,7 @@
 #define LEVITATE_CMETADATAVALUE_H
 
 
-#include "plugin/IPlugin.h"
+#include "../plugin/IPlugin.h"
 
 class CMetadataValue {
 public:
