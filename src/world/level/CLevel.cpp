@@ -5,5 +5,5 @@
 #include "CLevel.h"
 
 string CLevel::getName() {
-    return std::__cxx11::string();
+    return std::string();
 }
