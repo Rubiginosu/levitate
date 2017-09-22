@@ -19,10 +19,23 @@ public:
 
     CPosition(int x, int y);
 
+    CLevel *getLevel() const;
+
+    void setLevel(CLevel *level);
+
     CPosition(int x, int y, int z);
 
     CPosition(int x,int y,int z,CLevel* level);
 
+    bool isValid();
+
+    bool setStrong();
+
+    bool setWeak();
+
+    void getSide(int side);
+
+    void getSide(int side,int step);
 };
 
 
