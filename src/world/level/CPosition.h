@@ -8,8 +8,9 @@
 
 #include "../CVector3.h"
 #include "CLevel.h"
-
+#include<ostream>
 class CPosition : public CVector3 {
+    friend ostream& operator<<(ostream& out,CPosition& position);
 public:
     CLevel *level;
 
@@ -36,6 +37,8 @@ public:
     void getSide(int side);
 
     void getSide(int side,int step);
+
+    void setPosition(int x,int y,int z);
 };
 
 

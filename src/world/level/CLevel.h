@@ -9,6 +9,7 @@
 #include "../metadata/IMetadata.h"
 
 class CLevel : public IMetadata{
+public:
     string getName();
 };
 

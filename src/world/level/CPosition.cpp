@@ -54,3 +54,35 @@ void CPosition::getSide(int side, int step) {
 void CPosition::getSide(int side) {
     this->getSide(side,0);
 }
+
+bool CPosition::isValid() {
+    return this->level != nullptr;
+}
+
+bool CPosition::setStrong() {
+    return false;
+}
+
+bool CPosition::setWeak() {
+    return false;
+}
+
+void CPosition::setPosition(int x, int y, int z) {
+    this->x = x;
+    this->y = y;
+    this->z = z;
+}
+
+ostream &operator<<(ostream &out, CPosition &position) {
+    out << "Position(level="
+        << (position.isValid()? position.getLevel()->getName() : "null")
+        << "x="
+        << position.x
+        << "y="
+        << position.y
+        << "z="
+        << position.z;
+    return out;
+}
+
+
