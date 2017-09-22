@@ -6,6 +6,8 @@
 #define LEVITATE_CLEVELPROVIDER_H
 
 #include<string>
+#include "../../CVector3.h"
+#include "../CLevel.h"
 
 using namespace std;
 
@@ -37,7 +39,30 @@ public:
 
     bool unloadChunk(int X, int Z);
 
-    // TODO Finish
+    virtual bool isChunkGenerated(int X,int Z) = 0;
+
+    virtual bool isChunkPopulated(int X,int Z) = 0;
+
+    virtual bool isChunkLoaded(int X,int Z) = 0;
+
+    virtual string getName() = 0;
+
+    virtual long getTime() = 0;
+
+    virtual void setTime(long value) = 0;
+
+    virtual long getSeed() = 0;
+
+    virtual void setSeed(long value) = 0;
+
+    // TODO Compare
+    virtual void getSpawn() = 0;
+
+    virtual void setSpawn(CVector3* pos) = 0;
+
+    virtual CLevel* getLevel() = 0;
+
+    virtual void close() = 0;
 };
 
 
